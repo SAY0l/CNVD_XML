@@ -37,9 +37,9 @@ def Parse_cli(args,parser):
     elif args.crawl:
         crawl_only()
     elif args.to_database:
+        if args.skip_mode:
+            Task.Skip_mode = True
         xml_deal_only()
-    elif args.skip_mode:
-        Task.Skip_mode = True
     else:
         parser.print_help()
 
